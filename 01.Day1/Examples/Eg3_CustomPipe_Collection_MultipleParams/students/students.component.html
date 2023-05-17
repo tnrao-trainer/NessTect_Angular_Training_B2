@@ -1,0 +1,19 @@
+<h3  align="center">Custom Pipes in Angular</h3>
+<hr/>  
+
+Min  :   <input type="range" [(ngModel)]="min"  min="0"  max="500"  />  {{min}}
+<hr/>
+Max :   <input type="range" [(ngModel)]="max"  min="501"  max="1000"  />  {{max}}
+
+<table  border="2" width="350">
+    <tr>
+        <th>Student Id</th>
+        <th>Student Name</th>
+        <th>Total Marks</th>
+    </tr>
+	<tr  *ngFor="let item of studentsArray | range : min : max">
+		<td>{{item.sid}}</td>
+		<td>{{item.sname}}</td>
+		<td>{{item.total}}</td>
+	</tr>
+ </table>
