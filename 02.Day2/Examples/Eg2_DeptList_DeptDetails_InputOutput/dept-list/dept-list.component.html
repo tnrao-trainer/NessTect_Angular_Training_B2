@@ -1,0 +1,6 @@
+
+<app-dept-details *ngFor="let item of deptsArray"
+                [deptObj]="item"
+                (onDeptRemove)="deptRemove_parent($event)"> 
+</app-dept-details>
+
