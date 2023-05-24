@@ -1,0 +1,95 @@
+RxJS library in Angular Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  -->  RxJS library is used to implement asynchronous programming / calls.
+ 
+ AJAX
+ ~~~~~
+ --> AJAX is a programming technique that is used in client side technologies (JavaScript)  to exchange the data between client side code and server. 
+ 
+ -->  We can do partial page updates through ajax with server data. 
+ 
+ 
+ 
+1.    XmlHttpRequest 	----		callbacks
+2.    fetch()  api 		---			promise based 
+		axios  library (3 party)		---			promise based 
+3. 	RxJS  library 		----		 observables 
+
+
+What is Promise?
+
+A Promise is a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers with an asynchronous action's eventual success value or failure reason.
+
+			promiseObj.then(callback);
+			fetch(url).then(callback);
+			
+--------------------------------------------------------------------------------
+
+Angular uses rxjs in many situations:
+
+		1.  HttpClient Service class
+		2.  Routing Parameters
+		.....
+		
+		
+Note:  By default angular cli installs rxjs library while creating new angular project.
+
+--------------------------------------------------------------------------------------------------
+
+Working with Observables
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1.  Creating Observables:
+let   observableObj:Observable<any> =   new  Observable( (subscriber) => 
+			{
+				// code to emit the results
+				subscriber.next(data);
+				subscriber.next(data);
+				subscriber.next(data);
+				subscriber.next(data);
+				.....
+			} );
+
+
+2.   Subscribe /  Observer  for Observables:
+
+		observableObj.subscribe(  callback );
+
+		observableObj.subscribe(  (resData)  => {
+					// how to handle the response
+		} );
+			
+		
+ 
+ 
+ 
+  
+1.  Create observable with single value to emit.
+2. Create  observable with single values to emit
+3.  Create  observable with timeout --- delay
+4.  Create  observable with all three notication calls
+
+
+
+observableObj.subscribe({		
+	next :    callback,			//  required
+	error :   callback,		//  optional
+	complete :   callback		 // optional
+});
+---------------------------------------------------------------------------------------------------------
+
+RxJS Operators
+~~~~~~~~~~~~~
+
+Creational Operators:		 of, from, interval
+Filtering Operators:			 pipe, map, filter, etc... 
+	
+	
+	
+what's the difference between subject and observable? What are the cases where we should use subject instead of observables?
+
+
+	observable	----	subscribe1, subscribe2, subscribe3
+	subject 		----	multicaset ---  emit the results to subscribes in a single shot. 
+	
+	s
